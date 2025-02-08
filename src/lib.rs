@@ -10,3 +10,16 @@ pub struct PathParameters {
     pub dividend_yield: f64,
     pub steps: u32,
 }
+#[derive(Debug, Clone)]
+pub struct PricingModel {
+    params: PathParameters,
+    path_dependent: bool,
+    store_paths: bool,
+}
+
+#[derive(Debug)]
+pub struct PricingResult {
+    pub price: f64,
+    pub paths: Option<Vec<Vec<f64>>>,
+    pub early_exercise_boundary: Option<Vec<f64>>,
+}
