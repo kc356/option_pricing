@@ -1,6 +1,7 @@
 pub type PayoffFn = Box<dyn Fn(&[f64], f64) -> f64>;
 pub type ExerciseDecisionFn = Box<dyn Fn(&[f64], f64, f64, usize) -> bool>;
 
+#[derive(Debug, Clone)]
 pub struct PathParameters {
     pub spot_price: f64,
     pub time_to_maturity: f64,
